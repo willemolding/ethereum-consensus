@@ -130,9 +130,9 @@ pub fn compute_proposer_index<
 
         #[cfg(target_arch = "wasm32")]
         let i_bytes: [u8; 4] = (i / 32).to_le_bytes();
-
-        #[cfg(feature = "serde")]
+        #[cfg(not(target_arch = "wasm32"))]
         let i_bytes: [u8; 8] = (i / 32).to_le_bytes();
+
         hash_input[32..].copy_from_slice(&i_bytes);
         let random_byte = hash(hash_input).as_ref()[i % 32] as u64;
         let effective_balance = state.validators[candidate_index].effective_balance;
