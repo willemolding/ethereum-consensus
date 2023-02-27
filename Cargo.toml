@@ -7,7 +7,7 @@ license = "MIT OR Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [features]
 default = ["serde", "async"]
-serde = ["dep:serde", "hex", "serde_json", "serde_yaml"]
+serde = ["dep:serde", "hex", "serde_json", "serde_yaml", "ssz-rs/serde"]
 async = ["tokio", "tokio-stream", "async-stream"]
 spec-tests = ["serde", "serde_yaml"]
 gen-spec = ["syn", "prettyplease", "quote"]
@@ -25,14 +25,14 @@ std = [
 
 [dependencies]
 getrandom = { version = "0.2.8", default-features=false, features = ["js"] }
-ssz-rs = { git = "https://github.com/ralexstokes/ssz-rs",rev = "adf1a0b14cef90b9536f28ef89da1fab316465e1", default-features=false, features=["serde", "std"] }
+ssz-rs = { git = "https://github.com/ralexstokes/ssz-rs",rev = "adf1a0b14cef90b9536f28ef89da1fab316465e1", default-features=false }
 rand = {version = "0.8.4", default-features = false}
 thiserror = {version = "1.0.30"}
 error-chain={version = "0.12.4", default-features=false}
 sha2 = { version ="0.9.8", default-features = false }
 integer-sqrt = {version = "0.1.5", default-features = false }
 enr = {version = "0.6.2" }
-multihash = { version = "0.16", default-features = false, features = ["std", "multihash-impl", "identity", "sha2"] }
+multihash = { version = "0.16", default-features = false, features = ["multihash-impl", "identity", "sha2"] }
 multiaddr = {version="0.14.0" }
 hashbrown = {version="0.13.1"}
 
