@@ -26,7 +26,7 @@ std = [
 
 [dependencies]
 # non optional dependencies
-ssz-rs = { git = "https://github.com/willemolding/ssz-rs", rev = "def47db", default-features=false }
+ssz-rs = { git = "https://github.com/willemolding/ssz-rs", rev = "c689476", default-features=false }
 rand = {version = "0.8.4", default-features = false}
 sha2 = { version ="0.9.8", default-features = false }
 integer-sqrt = {version = "0.1.5", default-features = false }
